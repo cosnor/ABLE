@@ -3,19 +3,6 @@
     height: 0px; /* Alto de la barra de desplazamiento */
 }
 
-:root{
-	--sitio0: 0deg ;
-    --sitio1: 45deg ;
-    --sitio2: 90deg ;
-    --sitio3: 135deg ;
-    --sitio4: 180deg ;
-    --sitio5: 225deg ;
-    --sitio6: 270deg ;
-    --sitio7: 315deg ;
-    --sitio8: 360deg ;
-
-}
-
 *{
     padding: 0;
     margin: 0;
@@ -23,17 +10,21 @@
 }
 
 html{
-	font-size: 62.5%
+	font-size: 62.5%;
+    min-height: 100vh;
 }
 
 body{
     display: flex;
     width: 100vw;
-    height: 100vh;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(93deg, rgba(26, 228, 244, 0.15) 0%,rgba(50, 206, 35, 0.15) 100%),linear-gradient(183deg, rgb(88,219,228),rgb(0,94,181));
+    background: linear-gradient(183deg, rgb(88,219,228),rgb(0,94,181));
+    background-repeat: no-repeat; /* Evita la repetición del gradiente */
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra el gradiente */
 }
 
 header{
@@ -51,17 +42,16 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
     cursor: pointer;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
 }
 
-.header_button button{
-    padding: 5px 10px;
-    font-size: 1.5rem;
-    border: 1px solid #000;
-}
+a{
+    text-decoration: none;
+    color: black;
 
+}
 .header_button h1{
     padding-left: 2rem;
 }
@@ -80,6 +70,7 @@ main{
 .main_part{
     display: flex;
     width: 100%;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -106,18 +97,22 @@ main{
     align-content: center;
     width: 30%;
     min-height: 100%;
-    border: solid 0.1rem ;
-    border-radius: 6px;
-    border-color: rgba(253, 255, 209, 0.449);
-    background-color: rgba(18, 51, 84, 0.695);
     max-height: 25rem;
+    height: auto;
+    max-height: 100%;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
 }
 
 .main_part__boxes h2{
-    color: rgb(253, 255, 209);
+    color: #190404;
     align-self: center;
     padding-left: 1rem;
     padding-top: 1.2rem;
+    max-height: 100%;
 }
 
 .main_part__boxes h2::after{
@@ -127,15 +122,16 @@ main{
     height: 0.2rem;
     position: relative;
     top: 0.5rem;
-    background-color: rgb(253, 255, 209);
+    background-color: rgb(255, 168, 46);
     
 }
 
 .main_part__boxes p{
-    color: whitesmoke;
+    color: rgb(0, 0, 0);
     padding-left: 1rem;
     padding: 1.3rem;
     font-size: 1.5rem;
+    max-height: 100%;
 }
 
 .main_part__animation{
@@ -149,7 +145,7 @@ main{
 
 }
 .main_part__animation_world{
-    width: 60rem;
+    width: 50rem;
     display : flex;
     flex-direction: column;
     justify-content: center;
@@ -205,6 +201,13 @@ main{
 
 }
 
+.main_part__animation article img{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    transition: filter 0.3s; /* Agregamos una transición para suavizar el cambio */
+}
+
 
 
 .main_part__animation article img:hover{
@@ -214,13 +217,15 @@ main{
 }
 
 footer{
-    width: 100%;
+    width: 80%;
     height: 5%;
     display: flex;
     justify-content: center;
     padding-top: 2rem;
     padding-bottom: 1rem;
     color: antiquewhite;
+    text-align: center;
+    text-size-adjust: 70%;
 }
 
 /* La Animación de rotación se va a cargar bien cuando la imagen que rote quepa en el div*/
@@ -256,7 +261,142 @@ footer{
     }
 }
 
+@media (max-width: 880px){
+    body{
+        overflow: auto;
+    }
+    header{
+        width: 100%;
+    }
+    main{
+        justify-content: center;
+    }
+
+    .main_part{
+        padding: 1rem; /* Agrega un espacio alrededor del contenido */
+        flex-direction:  column-reverse;
+        gap: 1rem; /* Espacio entre los elementos */
+        
+    }
+
+    .main_part__boxes{
+        min-width: 80%;
+        height: 70%;
+        gap: 2rem; /* Espacio entre los elementos */
+        flex-wrap: wrap;
+    }
+
+    .main_part__boxes article{
+        width: 90%;
+        border-radius: 1.5rem;
+        max-height: 100%;
+    }
+
+    .main_part__boxes h2{
+        font-size: 3.5rem;
+        padding: 1rem;
+    }
+
+    .main_part__boxes p{
+        max-height: 100%;
+        padding: 3rem;
+        font-size: 2rem;
+        text-align: justify;
+    }
+
+    .main_part__animation_world_img{
+        width: 90%;
+        height: 50%;
+    }
+
+    .main_part__animation_world article{
+        width: 90%;
+        height: 30%;
+    }
+    
+    .main_part__animation article img{
+        width: 6rem;
+        height: 6rem;
+    }
+
+    footer{
+        font-size: 1.5rem;
+    }
+}
 
 
+@media (max-width: 768px){
 
+    body{
+        overflow: auto;
+    }
+    header{
+        width: 100%;
+    }
+    main{
+        justify-content: center;
+    }
+
+    .main_part{
+        padding: 1rem; /* Agrega un espacio alrededor del contenido */
+        flex-direction:  column-reverse;
+        gap: 1rem; /* Espacio entre los elementos */
+        
+    }
+
+    .main_part__boxes{
+        min-width: 80%;
+        height: 50%;
+        gap: 1rem; /* Espacio entre los elementos */
+        flex-wrap: wrap;
+    }
+
+    .main_part__boxes article{
+        width: 90%;
+        height: auto;
+        max-height: 100%;
+    }
+
+    .main_part__animation_world_img{
+        width: 90%;
+        height: 50%;
+    }
+
+    .main_part__animation_world article{
+        width: 90%;
+        height: 30%;
+    }
+    
+    .main_part__animation article img{
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .main_part__boxes h2{
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    .main_part__boxes p{
+        padding: 2.5rem;
+        font-size: 1.8rem;
+        text-align: justify;
+        max-height: 100%;
+    }
+    
+    footer{
+        font-size: 1.2rem;
+        width: 80%;
+        height: 5%;
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+        padding-top: 2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 2rem;
+        color: antiquewhite;
+    }
+    
+}
 
