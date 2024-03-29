@@ -1,0 +1,262 @@
+::-webkit-scrollbar {
+    width: 0px; /* Ancho de la barra de desplazamiento */
+    height: 0px; /* Alto de la barra de desplazamiento */
+}
+
+:root{
+	--sitio0: 0deg ;
+    --sitio1: 45deg ;
+    --sitio2: 90deg ;
+    --sitio3: 135deg ;
+    --sitio4: 180deg ;
+    --sitio5: 225deg ;
+    --sitio6: 270deg ;
+    --sitio7: 315deg ;
+    --sitio8: 360deg ;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%
+}
+
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(93deg, rgba(26, 228, 244, 0.15) 0%,rgba(50, 206, 35, 0.15) 100%),linear-gradient(183deg, rgb(88,219,228),rgb(0,94,181));
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.header_button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 1.5rem;
+    cursor: pointer;
+    padding-bottom: 1.5rem;
+}
+
+.header_button button{
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+}
+
+.header_button h1{
+    padding-left: 2rem;
+}
+
+.header img{
+    width: 50px;
+    height: 50px;
+}
+
+main{
+    height: 85%;
+    width: 100%;
+    display: flex;
+}
+
+.main_part{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main_part__boxes{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 35%;
+    justify-content: space-evenly;
+    align-items: center;
+    /* Uso de Patrón Responsive Mostly Fluid */
+    flex-wrap: wrap;
+}
+
+
+
+.main_part__boxes article{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 30%;
+    min-height: 100%;
+    border: solid 0.1rem ;
+    border-radius: 6px;
+    border-color: rgba(253, 255, 209, 0.449);
+    background-color: rgba(18, 51, 84, 0.695);
+    max-height: 25rem;
+}
+
+.main_part__boxes h2{
+    color: rgb(253, 255, 209);
+    align-self: center;
+    padding-left: 1rem;
+    padding-top: 1.2rem;
+}
+
+.main_part__boxes h2::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    position: relative;
+    top: 0.5rem;
+    background-color: rgb(253, 255, 209);
+    
+}
+
+.main_part__boxes p{
+    color: whitesmoke;
+    padding-left: 1rem;
+    padding: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.main_part__animation{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+}
+.main_part__animation_world{
+    width: 60rem;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_part__animation_person{
+    width: 14.4375rem;
+    height: 17rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -1rem;
+    background: url(../assets/vectorizado.svg);
+    background-size: cover;
+    animation: movePerson 1s steps(8) infinite;
+    z-index: 2;
+
+}
+
+
+@keyframes movePerson {
+    0% {
+        background-position: 0rem;
+    }
+    100% {
+        background-position: -114.5rem;
+    }
+}
+
+.main_part__animation_world_img{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -4rem;  
+    z-index: 1;
+
+}
+
+.main_part__animation article{
+    display: flex;
+    width: 30%;
+    height: 20%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    filter: drop-shadow(0 0 0.65rem rgba(2, 41, 118, 0.534));
+    justify-content: center;
+    
+
+}
+
+
+
+.main_part__animation article img:hover{
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.75rem rgba(253, 255, 209));
+    
+}
+
+footer{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: antiquewhite;
+}
+
+/* La Animación de rotación se va a cargar bien cuando la imagen que rote quepa en el div*/
+
+.main_part__animation_world_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s; /* Agregamos una transición para suavizar el cambio */
+    transform-origin: center; /* Centramos el punto de rotación */
+    animation-fill-mode: forwards; /* Mantiene el último estado de la animación */
+
+}
+
+.main_part__animation_world_img:hover{
+    animation-name: rotateAnimation;
+    animation-duration: 10s; /* Duración de la animación */
+    animation-iteration-count: infinite; /* Repetir infinitamente */
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); /* Función de temporización lineal */
+    animation-fill-mode: forwards; /* Mantiene el último estado de la animación */
+}
+
+
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Estado inicial */
+    }
+    100% {
+        transform: rotate(360deg); /* Estado final */
+    }
+}
+
+
+
+
+
