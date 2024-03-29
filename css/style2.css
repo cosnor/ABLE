@@ -1,0 +1,162 @@
+
+::-webkit-scrollbar {
+    width: 0px; /* Ancho de la barra de desplazamiento */
+    height: 0px; /* Alto de la barra de desplazamiento */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    min-height: 100vh;
+}
+
+body{
+    background-image: linear-gradient(352deg, rgb(159,255,142),rgb(21,182,236));
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.header_button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 1rem;
+    cursor: pointer;
+    padding-bottom: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+
+}
+.header_button h1{
+    padding-left: 2rem;
+}
+
+.header img{
+    width: 5rem;
+    height: 5rem;
+}
+
+
+main{
+    display: flex;
+    min-width: 100%;;
+    height: 90%;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.title-container h1{
+    padding-top: 3rem;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.068);
+    padding-bottom: 1rem;
+}
+
+.title-container p{
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.068);
+    width: 70%;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.main-container{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.main-container ul{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+
+.main-container li{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container-element1, .main-container-element2, .main-container-element3, .main-container-element4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 16rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    visibility: hidden;
+}
+
+
+
+footer{
+    padding-top: 3rem;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    background-color: rgba(240, 248, 255, 0.122);
+    justify-content: center;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    padding-bottom: 1rem;
+}
+
+footer div p{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
